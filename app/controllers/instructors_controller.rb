@@ -25,9 +25,11 @@ class InstructorsController < ApplicationController
         head :no_content
     end
 
-
-
-
+    def update 
+        instructor = find_instructor
+        instructor.update(instructor_params)
+        render json: instructor
+    end
 
     private
 
